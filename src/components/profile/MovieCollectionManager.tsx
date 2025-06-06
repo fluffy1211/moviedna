@@ -169,7 +169,7 @@ export default function MovieCollectionManager() {
         </div>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">Loading your collection</h3>
         <p className="text-gray-600 max-w-md mx-auto leading-relaxed">
-          We're gathering all your movies and watchlist items...
+          We&apos;re gathering all your movies and watchlist items...
         </p>
       </div>
     )
@@ -185,7 +185,7 @@ export default function MovieCollectionManager() {
           My Movie Collection
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          Manage your watchlist and track the movies you've watched
+          Manage your watchlist and track the movies you&apos;ve watched
         </p>
       </div>
 

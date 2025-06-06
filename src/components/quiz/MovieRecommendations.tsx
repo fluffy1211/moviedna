@@ -25,7 +25,7 @@ export default function MovieRecommendations({ result }: MovieRecommendationsPro
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">🎬 Loading Your Results...</h1>
           <p className="text-xl text-gray-600">
-            We're processing your movie recommendations. Please wait a moment.
+            We&apos;re processing your movie recommendations. Please wait a moment.
           </p>
           <Button 
             onClick={() => router.push('/quiz')}
@@ -83,7 +83,7 @@ export default function MovieRecommendations({ result }: MovieRecommendationsPro
             Your MovieDNA Results!
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Based on your preferences, we've found some perfect movie matches for you.
+            Based on your preferences, we&apos;ve found some perfect movie matches for you.
             <br className="hidden sm:block" />
             Add them to your profile to start building your watchlist!
           </p>

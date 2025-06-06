@@ -109,7 +109,7 @@ export default function QuizPage() {
             <div className="space-y-2">
               <h3 className="text-2xl font-bold">Analyzing your MovieDNA...</h3>
               <p className="text-muted-foreground leading-relaxed">
-                We're analyzing your preferences and finding the perfect recommendations for you.
+                We&apos;re analyzing your preferences and finding the perfect recommendations for you.
               </p>
             </div>
             <div className="w-full bg-muted rounded-full h-2">

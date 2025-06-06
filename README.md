@@ -99,6 +99,9 @@ NEXTAUTH_SECRET="your-secret-key"
 # Google OAuth
 GOOGLE_CLIENT_ID="your-google-client-id"
 GOOGLE_CLIENT_SECRET="your-google-client-secret"
+
+# TMDB API (for movie data)
+TMDB_API_KEY="your-tmdb-api-key"
 ```
 
 ### 4. Database setup

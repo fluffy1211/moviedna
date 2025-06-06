@@ -93,7 +93,7 @@ export async function GET(request: Request) {
         movieStats.successful_sources++;
         const movies = Array.isArray(result.value) ? result.value : result.value.results || [];
         movies.forEach((movie: Movie) => {
-          if (movie.vote_average >= 5.5 && movie.vote_count >= 20) { // Quality filter
+          if (movie.vote_average >= 5.5 && (movie.vote_count || 0) >= 20) { // Quality filter
             allMovies.set(movie.id, movie);
           }
         });

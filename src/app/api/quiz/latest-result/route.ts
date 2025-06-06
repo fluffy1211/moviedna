@@ -28,7 +28,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Regenerate recommendations based on stored preferences
-    const { generateRecommendations } = await import('../complete/route')
+    const { generateRecommendations } = await import('@/lib/recommendation-utils')
     const recommendations = await generateRecommendations(latestResult.moviePreferences as any)
 
     // Return the result in the same format as the completion endpoint
