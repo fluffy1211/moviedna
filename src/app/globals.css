@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .container {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .page-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -28,8 +52,15 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
+    --radius: 0.5rem;
+    
+    /* Custom brand colors */
+    --brand-primary: 217 32% 17%;
+    --brand-primary-foreground: 210 40% 98%;
+    --brand-secondary: 215 28% 25%;
+    --brand-accent: 217 35% 45%;
   }
+  
   .dark {
     --background: 20 14.3% 4.1%;
     --foreground: 60 9.1% 97.8%;
@@ -54,15 +85,90 @@
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
+    
+    /* Custom brand colors for dark mode */
+    --brand-primary: 217 35% 85%;
+    --brand-primary-foreground: 217 32% 17%;
+    --brand-secondary: 215 28% 75%;
+    --brand-accent: 217 35% 65%;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
   }
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+
+
+  /* Improve button and interactive element accessibility */
+  button, 
+  a,
+  [role="button"] {
+    @apply transition-colors duration-200;
+  }
+
+  /* Custom selection colors */
+  ::selection {
+    @apply bg-primary/20 text-primary;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-primary;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 focus-visible:ring-secondary;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent;
+  }
+
+  .card-gradient {
+    @apply bg-gradient-to-br from-card via-card to-muted/20;
+  }
+
+  /* Page layout utilities */
+  .page-container {
+    @apply container mx-auto max-w-7xl;
+  }
+
+  .section-padding {
+    @apply py-12 lg:py-16;
+  }
+
+  .section-padding-sm {
+    @apply py-8 lg:py-12;
+  }
+
+  /* Typography improvements */
+  .heading-1 {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+
+  .heading-2 {
+    @apply text-3xl sm:text-4xl font-bold tracking-tight;
+  }
+
+  .heading-3 {
+    @apply text-2xl sm:text-3xl font-semibold tracking-tight;
+  }
+
+  .subtitle {
+    @apply text-lg sm:text-xl text-muted-foreground;
   }
 }
